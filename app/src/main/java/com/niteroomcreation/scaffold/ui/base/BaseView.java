@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
 
@@ -50,6 +51,8 @@ public abstract class BaseView extends AppCompatActivity implements IBaseView {
             } catch (Exception e) {
                 throw new IllegalStateException("Inflating contentLayout() failed on " + this.getClass().getSimpleName());
             }
+        else
+            throw new IllegalStateException("contentLayout() can't be EMPTY " + this.getClass().getSimpleName());
 
         ButterKnife.bind(this);
         mActivity = this;
@@ -85,6 +88,17 @@ public abstract class BaseView extends AppCompatActivity implements IBaseView {
     @Override
     public void showEmptyState() {
         hideEmptyState();
+        layoutEmpty.setListener(new GenericStateView.GenericStateListener() {
+            @Override
+            public void onActionClicked() {
+                Log.e("tagTes", "onActionClicked: callng me? onActionClicked()");
+            }
+
+            @Override
+            public void onFooterClicked() {
+                Log.e("tagTes", "onActionClicked: callng me? onFooterClicked()");
+            }
+        });
         layoutEmpty.showState();
     }
 
