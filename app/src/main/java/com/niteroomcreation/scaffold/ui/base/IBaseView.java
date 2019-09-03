@@ -14,4 +14,8 @@ public interface IBaseView {
     void showMessage(String message);
 
     void showErrorMessage(int messageRes, int messageResAction);
+
+    void showEmptyState();
+
+    void hideEmptyState();
 }

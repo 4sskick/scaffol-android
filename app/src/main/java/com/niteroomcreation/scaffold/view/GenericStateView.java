@@ -103,6 +103,31 @@ public class GenericStateView extends ConstraintLayout {
         return vContent;
     }
 
+    public void showState() {
+        showState(icon, title, subTitle, footer, button, mListener);
+    }
+
+    public void showState(int icon, String title, String subTitle, String footer, String button, GenericStateListener mListener) {
+        this.icon = icon;
+        this.title = title;
+        this.subTitle = subTitle;
+        this.footer = footer;
+        this.button = button;
+        this.mListener = mListener;
+
+        if (!templateContent) {
+            //setData();
+            //should set the data based on user set
+        } else {
+            setTemplateData();
+        }
+
+        sWrapParent.setVisibility(VISIBLE);
+        if (getContent() != null) getContent().setVisibility(GONE);
+        sWrapState.setVisibility(VISIBLE);
+        sProgress.setVisibility(GONE);
+    }
+
     private void setTemplateData() {
         sTvFooter.setVisibility(VISIBLE);
     }
@@ -116,6 +141,7 @@ public class GenericStateView extends ConstraintLayout {
     void onClickedView(View view) {
         switch (view.getId()) {
             case R.id.s_wrap_parent:
+                mListener.onActionClicked();
                 break;
         }
     }
