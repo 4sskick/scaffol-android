@@ -20,8 +20,8 @@
     <color name="buttonRedHover">@color/cg_red</color>
 
     <!--common colors-->
-    <color name="colorPrimary">@color/white</color>
-    <color name="colorPrimaryDark">@color/white</color>
+    <color name="colorPrimary">@color/cerulean</color>
+    <color name="colorPrimaryDark">@color/cerulean_darker</color>
     <color name="colorAccent">@color/cerulean</color>
     <color name="white">#fff</color>
     <color name="snow">#fafafa</color>
