@@ -3,6 +3,7 @@ package com.niteroomcreation.scaffold.ui.base;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,9 +18,9 @@ import butterknife.ButterKnife;
 /**
  * Created by Septian Adi Wijaya on 03/09/19
  */
-public abstract class BaseView extends AppCompatActivity implements IBaseView {
+public abstract class BaseView extends AppCompatActivity implements IBaseView, BaseFragmentView.BaseFragmentCallback {
 
-    private static final int EMPTY_LAYOUT = 0;
+    public static final int EMPTY_LAYOUT = 0;
 
     @BindView(R.id.layout_content)
     RelativeLayout layoutContent;
@@ -27,6 +28,7 @@ public abstract class BaseView extends AppCompatActivity implements IBaseView {
     GenericStateView layoutEmpty;
 
     private Activity mActivity;
+    private FragmentManager fragmentManager;
 
     protected abstract int parentLayout();
 
@@ -56,6 +58,7 @@ public abstract class BaseView extends AppCompatActivity implements IBaseView {
 
         ButterKnife.bind(this);
         mActivity = this;
+        fragmentManager = ((BaseView) mActivity).getSupportFragmentManager();
         hideEmptyState();
         initComponents();
     }
@@ -105,5 +108,29 @@ public abstract class BaseView extends AppCompatActivity implements IBaseView {
     @Override
     public void hideEmptyState() {
         layoutEmpty.hideAll();
+    }
+
+    @Override
+    public void onFragmentAttached() {
+
+    }
+
+    @Override
+    public void onFragmentDetached(String tag) {
+
+    }
+
+    public void moveToFragment(int viewIdFrameLayout, BaseFragmentView fragment, String fragmentTag) {
+        try {
+            fragmentManager.beginTransaction()
+                    .replace(viewIdFrameLayout, fragment, fragmentTag)
+                    .commit();
+        } catch (Exception e) {
+            throw new IllegalStateException(String.format("Seems like fragmentManager isn't initialized %s", e.getMessage()));
+        }
+    }
+
+    public FragmentManager getBaseMainFragmentManager() {
+        return fragmentManager;
     }
 }
