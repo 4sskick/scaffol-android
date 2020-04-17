@@ -1,12 +1,13 @@
-package com.niteroomcreation.scaffold.ui.activity.main;
+package com.niteroomcreation.scaffold.ui.activity.splash;
 
 import com.niteroomcreation.scaffold.base.IBasePresenter;
 import com.niteroomcreation.scaffold.base.IBaseView;
 
 /**
- * Created by Septian Adi Wijaya on 03/09/19
+ * Created by Septian Adi Wijaya on 17/04/2020.
+ * please be sure to add credential if you use people's code
  */
-public interface MainContract {
+public interface SplashContract {
 
     interface View extends IBaseView {
 
@@ -15,5 +16,4 @@ public interface MainContract {
     interface Presenter extends IBasePresenter<View> {
 
     }
-
 }

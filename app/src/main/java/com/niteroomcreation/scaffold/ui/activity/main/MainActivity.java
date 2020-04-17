@@ -1,11 +1,9 @@
 package com.niteroomcreation.scaffold.ui.activity.main;
 
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,14 +14,13 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.niteroomcreation.scaffold.R;
-import com.niteroomcreation.scaffold.ui.base.BaseView;
+import com.niteroomcreation.scaffold.base.BaseView;
 import com.niteroomcreation.scaffold.ui.fragment.gallery.GalleryFragment;
 import com.niteroomcreation.scaffold.ui.fragment.home.HomeFragment;
 import com.niteroomcreation.scaffold.ui.fragment.slideshow.SlideshowFragment;
 import com.niteroomcreation.scaffold.ui.fragment.tool.ToolFragment;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends BaseView implements MainContract.View {

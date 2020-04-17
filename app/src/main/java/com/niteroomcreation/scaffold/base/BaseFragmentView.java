@@ -1,4 +1,4 @@
-package com.niteroomcreation.scaffold.ui.base;
+package com.niteroomcreation.scaffold.base;
 
 import android.content.Context;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.niteroomcreation.scaffold.ui.base;
+package com.niteroomcreation.scaffold.base;
 
 /**
  * Created by Septian Adi Wijaya on 03/09/19

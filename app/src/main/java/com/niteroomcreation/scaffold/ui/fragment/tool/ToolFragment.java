@@ -3,7 +3,7 @@ package com.niteroomcreation.scaffold.ui.fragment.tool;
 import android.widget.TextView;
 
 import com.niteroomcreation.scaffold.R;
-import com.niteroomcreation.scaffold.ui.base.BaseFragmentView;
+import com.niteroomcreation.scaffold.base.BaseFragmentView;
 
 import butterknife.BindView;
 

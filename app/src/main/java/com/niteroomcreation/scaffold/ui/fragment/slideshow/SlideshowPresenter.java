@@ -1,6 +1,6 @@
 package com.niteroomcreation.scaffold.ui.fragment.slideshow;
 
-import com.niteroomcreation.scaffold.ui.base.BasePresenter;
+import com.niteroomcreation.scaffold.base.BasePresenter;
 
 /**
  * Created by Septian Adi Wijaya on 04/09/19
