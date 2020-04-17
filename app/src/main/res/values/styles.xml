@@ -21,4 +21,19 @@
         <item name="colorAccent">@color/cerulean</item> <!-- Whatever color you want-->
     </style>
 
+    <!--component style-->
+    <style name="BaseButton" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:minHeight">@dimen/_42sdp</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="FontBold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

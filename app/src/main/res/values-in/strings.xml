@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nav_header_desc">Navigasi Atas</string>
+    <string name="action_settings">Pengaturan</string>
+
+    <string name="menu_home">Utama</string>
+    <string name="menu_gallery">Galeri</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Alat</string>
+    <string name="menu_share">Berbagi</string>
+    <string name="menu_send">Kirim</string>
+    <string name="str_skip">Lewati</string>
+    <string name="str_next">Lanjut</string>
+</resources>

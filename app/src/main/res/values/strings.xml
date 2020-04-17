@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Scaffold</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="app_name" translatable="false">Scaffold</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -13,4 +13,7 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="str_skip">skip</string>
+    <string name="str_next">Next</string>
+    <string name="lorem_ipsum" translatable="false">Lorem ipsum dolor sit amet, et ipsum vituperata est, in illum mediocritatem mel. Ei clita regione appellantur pri, no sed ornatus debitis. Illum mediocritatem nam ut, mutat impetus deserunt vix ut. Ea sed habeo porro quaestio, mea ne veniam accommodare vituperatoribus.</string>
 </resources>

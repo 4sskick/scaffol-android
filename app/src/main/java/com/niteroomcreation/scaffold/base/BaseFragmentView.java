@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 import butterknife.ButterKnife;
 
 /**
@@ -22,7 +23,17 @@ public abstract class BaseFragmentView extends Fragment implements IBaseView {
 
     protected abstract int contentLayout();
 
-    abstract protected void initComponents();
+    abstract protected void initComponents(View view);
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
 
     @Nullable
     @Override
@@ -34,7 +45,7 @@ public abstract class BaseFragmentView extends Fragment implements IBaseView {
         else
             throw new IllegalStateException("contentLayout() can't be EMPTY " + this.getClass().getSimpleName());
         ButterKnife.bind(this, view);
-        initComponents();
+        initComponents(view);
 
         return view;
     }
@@ -72,11 +83,11 @@ public abstract class BaseFragmentView extends Fragment implements IBaseView {
         super.onDestroyView();
     }
 
-    public static String getFragmentTitle() {
+    public String getFragmentTitle() {
         return fragmentTitle;
     }
 
-    public static void setFragmentTitle(String fragmentTitle) {
+    public void setFragmentTitle(String fragmentTitle) {
         BaseFragmentView.fragmentTitle = fragmentTitle;
     }
 

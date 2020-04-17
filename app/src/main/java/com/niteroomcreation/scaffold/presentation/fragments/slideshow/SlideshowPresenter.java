@@ -1,0 +1,23 @@
+package com.niteroomcreation.scaffold.presentation.fragments.slideshow;
+
+import com.niteroomcreation.scaffold.base.BasePresenter;
+
+/**
+ * Created by Septian Adi Wijaya on 04/09/19
+ */
+public class SlideshowPresenter extends BasePresenter<SlideshowContract.View> implements SlideshowContract.Presenter {
+
+    public SlideshowPresenter(SlideshowContract.View view) {
+        this.mView = view;
+    }
+
+    @Override
+    public void onViewActive(SlideshowContract.View view) {
+
+    }
+
+    @Override
+    public void onViewInactive() {
+
+    }
+}
