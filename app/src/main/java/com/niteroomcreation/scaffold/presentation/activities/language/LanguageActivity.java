@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.niteroomcreation.scaffold.R;
 import com.niteroomcreation.scaffold.base.BaseView;
-import com.niteroomcreation.scaffold.utils.LogHelper;
+import com.niteroomcreation.scaffold.utils.NavigationUtils;
 
 import butterknife.OnClick;
 
@@ -37,6 +37,7 @@ public class LanguageActivity extends BaseView implements LanguageContract.View 
     void onVieClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_language_save:
+                NavigationUtils.directToAccountSetup(this);
                 break;
         }
     }

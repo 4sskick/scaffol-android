@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/fl_account_setup"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/layout_account_setup_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/layout_account_setup_bottom"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/divider_lighter"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/txt_account_setup_label"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/padding_xsmall"
+            android:layout_marginRight="@dimen/font_size_xsmall"
+            android:gravity="center"
+            android:text="@string/str_need_register"
+            android:textSize="@dimen/font_size_small" />
+
+        <TextView
+            android:id="@+id/txt_account_setup_label_state"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/txt_account_setup_label"
+            android:layout_toRightOf="@id/txt_account_setup_label"
+            android:gravity="center"
+            android:text="@string/str_register"
+            android:textColor="@color/cerulean"
+            android:textSize="@dimen/font_size_small"
+            android:textStyle="italic" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

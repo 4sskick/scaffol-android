@@ -9,6 +9,10 @@
     <string name="menu_tools">Alat</string>
     <string name="menu_share">Berbagi</string>
     <string name="menu_send">Kirim</string>
-    <string name="str_skip">Lewati</string>
+    <string name="str_skip">lewati</string>
     <string name="str_next">Lanjut</string>
+    <string name="str_choose_lang">Pilih bahasamu</string>
+    <string name="str_save">simpan</string>
+    <string name="str_need_login">Sudah punya akun?</string>
+    <string name="str_need_register">Belum punya akun?</string>
 </resources>

@@ -65,6 +65,7 @@
     <color name="text_disabled">#aeafb6</color>
     <color name="text_lighter">#71737f</color>
     <color name="divider">#d7d7db</color>
+    <color name="divider_lighter">#31D7D7DB</color>
     <color name="backgroundPrimary">@color/white</color>
     <color name="backgroundSecondary">#f9f9fa</color>
     <color name="backgroundIcon">#edf8fb</color>
