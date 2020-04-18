@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_standard">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/padding_small"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/padding_standard"
+        android:text="@string/str_welcome"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/font_size_xlarge"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/padding_small"
+        android:text="@string/str_choose_lang"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/font_size_standard" />
+
+    <RadioGroup
+        android:id="@+id/radio_language"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/padding_standard"
+        android:gravity="center">
+
+        <RadioButton
+            android:id="@+id/radio_language_id"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/bg_border_blue"
+            android:button="@null"
+            android:drawableEnd="@android:drawable/btn_radio"
+            android:drawableRight="@android:drawable/btn_radio"
+            android:drawablePadding="@dimen/padding_standard"
+            android:gravity="center_vertical|end"
+            android:paddingEnd="@dimen/padding_small"
+            android:paddingRight="@dimen/padding_small"
+            android:text="@string/str_lang_id"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_size_large" />
+
+        <RadioButton
+            android:id="@+id/radio_language_en"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/padding_small"
+            android:background="@drawable/bg_border"
+            android:button="@null"
+            android:drawableEnd="@android:drawable/btn_radio"
+            android:drawableRight="@android:drawable/btn_radio"
+            android:drawablePadding="@dimen/padding_standard"
+            android:gravity="center_vertical|end"
+            android:paddingEnd="@dimen/padding_small"
+            android:paddingRight="@dimen/padding_small"
+            android:text="@string/str_lang_en"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/font_size_large" />
+    </RadioGroup>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_language_save"
+        style="@style/BaseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="@drawable/bg_border"
+        android:text="@string/str_save" />
+</LinearLayout>

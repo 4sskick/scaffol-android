@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.niteroomcreation.scaffold.presentation.activities.intro.IntroActivity;
+import com.niteroomcreation.scaffold.presentation.activities.language.LanguageActivity;
 import com.niteroomcreation.scaffold.presentation.activities.main.MainActivity;
 
 /**
@@ -19,6 +20,12 @@ public class NavigationUtils {
 
     public static void directToIntroScreen(Activity act) {
         Intent i = new Intent(act, IntroActivity.class);
+        act.startActivity(i);
+        act.finish();
+    }
+
+    public static void directToChooseLangugeScreen(Activity act) {
+        Intent i = new Intent(act, LanguageActivity.class);
         act.startActivity(i);
     }
 

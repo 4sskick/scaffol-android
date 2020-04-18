@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.niteroomcreation.scaffold.R;
 import com.niteroomcreation.scaffold.view.GenericStateView;
@@ -18,7 +19,8 @@ import butterknife.ButterKnife;
 /**
  * Created by Septian Adi Wijaya on 03/09/19
  */
-public abstract class BaseView extends AppCompatActivity implements IBaseView, BaseFragmentView.BaseFragmentCallback {
+public abstract class BaseView extends AppCompatActivity implements IBaseView,
+        BaseFragmentView.BaseFragmentCallback {
 
     public static final int EMPTY_LAYOUT = 0;
 
@@ -29,12 +31,13 @@ public abstract class BaseView extends AppCompatActivity implements IBaseView, B
 
     private Activity mActivity;
     private FragmentManager fragmentManager;
+    private Toast mToast;
 
     protected abstract int parentLayout();
 
     protected abstract int contentLayout();
 
-    abstract protected void initComponents(@Nullable Bundle savedInstanceState);
+    protected abstract void initComponents(@Nullable Bundle savedInstanceState);
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,7 +51,8 @@ public abstract class BaseView extends AppCompatActivity implements IBaseView, B
         if (contentLayout() != EMPTY_LAYOUT)
             try {
                 layoutContent = findViewById(R.id.layout_content);
-                LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
+                LayoutInflater inflater =
+                        (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
                 inflater.inflate(contentLayout(), layoutContent);
             } catch (Exception e) {
                 throw new IllegalStateException("Inflating contentLayout() failed on " + this.getClass().getSimpleName());
@@ -90,12 +94,20 @@ public abstract class BaseView extends AppCompatActivity implements IBaseView, B
 
     @Override
     public void showMessage(String message) {
+        if (mToast != null) {
+            mToast.cancel();
+            mToast = null;
+        }
 
+        if (message != null && !message.isEmpty()) {
+            mToast = Toast.makeText(this, message, Toast.LENGTH_LONG);
+            mToast.show();
+        }
     }
 
     @Override
     public void showErrorMessage(int messageRes, int messageResAction) {
-
+        //should be use toast with action button
     }
 
     @Override
@@ -130,13 +142,15 @@ public abstract class BaseView extends AppCompatActivity implements IBaseView, B
 
     }
 
-    public void moveToFragment(int viewIdFrameLayout, BaseFragmentView fragment, String fragmentTag) {
+    public void moveToFragment(int viewIdFrameLayout, BaseFragmentView fragment,
+                               String fragmentTag) {
         try {
             fragmentManager.beginTransaction()
                     .replace(viewIdFrameLayout, fragment, fragmentTag)
                     .commit();
         } catch (Exception e) {
-            throw new IllegalStateException(String.format("Seems like fragmentManager isn't initialized %s", e.getMessage()));
+            throw new IllegalStateException(String.format("Seems like fragmentManager isn't " +
+                    "initialized %s", e.getMessage()));
         }
     }
 

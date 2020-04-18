@@ -16,4 +16,9 @@
     <string name="str_skip">skip</string>
     <string name="str_next">Next</string>
     <string name="lorem_ipsum" translatable="false">Lorem ipsum dolor sit amet, et ipsum vituperata est, in illum mediocritatem mel. Ei clita regione appellantur pri, no sed ornatus debitis. Illum mediocritatem nam ut, mutat impetus deserunt vix ut. Ea sed habeo porro quaestio, mea ne veniam accommodare vituperatoribus.</string>
+    <string name="str_choose_lang">Choose your language</string>
+    <string name="str_welcome">Welcome laids!</string>
+    <string name="str_lang_id">Bahasa Indonesia (ID)</string>
+    <string name="str_lang_en">English (EN)</string>
+    <string name="str_save">save</string>
 </resources>

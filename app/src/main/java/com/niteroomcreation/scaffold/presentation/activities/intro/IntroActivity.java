@@ -1,18 +1,22 @@
 package com.niteroomcreation.scaffold.presentation.activities.intro;
 
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 
 import com.niteroomcreation.scaffold.R;
 import com.niteroomcreation.scaffold.base.BaseFragmentView;
 import com.niteroomcreation.scaffold.base.BaseView;
 import com.niteroomcreation.scaffold.presentation.adapters.GenericPagerAdapter;
+import com.niteroomcreation.scaffold.utils.NavigationUtils;
 
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import me.relex.circleindicator.CircleIndicator;
 
 /**
@@ -95,6 +99,16 @@ public class IntroActivity extends BaseView implements IntroContract.View {
                     viewPager.setCurrentItem(0);
                 }
             });
+        }
+    }
+
+    @OnClick({R.id.btn_intro_next, R.id.btn_intro_skip})
+    void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.btn_intro_skip:
+            case R.id.btn_intro_next:
+                NavigationUtils.directToChooseLangugeScreen(this);
+                break;
         }
     }
 
