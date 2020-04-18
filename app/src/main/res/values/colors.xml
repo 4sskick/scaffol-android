@@ -58,6 +58,7 @@
     <color name="t40_orange_alert">#40ffa800</color>
     <color name="red_error">#ef3f3a</color>
     <color name="t40_red_error">#40ef3f3a</color>
+    <color name="t50_red_error">#7CEF3F3A</color>
 
     <!--Text Color Variant-->
     <color name="text_medium">#353749</color>

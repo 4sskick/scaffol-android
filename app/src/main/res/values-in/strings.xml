@@ -15,4 +15,12 @@
     <string name="str_save">simpan</string>
     <string name="str_need_login">Sudah punya akun?</string>
     <string name="str_need_register">Belum punya akun?</string>
+    <string name="str_alt_login">Alternatif login</string>
+    <string name="str_forgot_passw">lupa kata sandi?</string>
+    <string name="str_login_to_begin">Silahkan login untuk memulai</string>
+    <string name="str_register_name">Nama Pengguna</string>
+    <string name="str_register_passw">Kata Sandi</string>
+    <string name="str_register_phone">Nomor telp. +62</string>
+    <string name="str_register_to_begin">Silahkan daftar untuk memulai</string>
+    <string name="str_register">Daftar</string>
 </resources>

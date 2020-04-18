@@ -27,7 +27,10 @@
         </activity>
         <activity android:name=".presentation.activities.intro.IntroActivity" />
         <activity android:name=".presentation.activities.language.LanguageActivity" />
-        <activity android:name=".presentation.activities.account_setup.AccountSetupActivity" />
+        <activity
+            android:name=".presentation.activities.account_setup.AccountSetupActivity"
+            android:label=""
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
