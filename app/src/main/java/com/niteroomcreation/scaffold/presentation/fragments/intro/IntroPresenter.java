@@ -1,5 +1,7 @@
 package com.niteroomcreation.scaffold.presentation.fragments.intro;
 
+import android.content.Context;
+
 import com.niteroomcreation.scaffold.base.BasePresenter;
 
 /**
@@ -8,8 +10,8 @@ import com.niteroomcreation.scaffold.base.BasePresenter;
  */
 public class IntroPresenter extends BasePresenter<IntroContract.View> implements IntroContract.Presenter {
 
-    IntroPresenter(IntroContract.View view) {
-        super.onViewActive(view);
+    IntroPresenter(IntroContract.View view, Context context) {
+        super.onViewActive(view, context);
     }
 
 }

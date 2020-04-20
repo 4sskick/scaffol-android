@@ -1,5 +1,7 @@
 package com.niteroomcreation.scaffold.presentation.fragments.gallery;
 
+import android.content.Context;
+
 import com.niteroomcreation.scaffold.base.BasePresenter;
 
 /**
@@ -7,17 +9,8 @@ import com.niteroomcreation.scaffold.base.BasePresenter;
  */
 public class GalleryPresenter extends BasePresenter<GalleryContract.View> implements GalleryContract.Presenter {
 
-    public GalleryPresenter(GalleryContract.View view) {
-        this.mView = view;
+    public GalleryPresenter(GalleryContract.View view, Context context) {
+        super.onViewActive(view, context);
     }
 
-    @Override
-    public void onViewActive(GalleryContract.View view) {
-
-    }
-
-    @Override
-    public void onViewInactive() {
-
-    }
 }

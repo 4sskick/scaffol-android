@@ -1,5 +1,7 @@
 package com.niteroomcreation.scaffold.presentation.fragments.tool;
 
+import android.content.Context;
+
 import com.niteroomcreation.scaffold.base.BasePresenter;
 
 /**
@@ -7,17 +9,8 @@ import com.niteroomcreation.scaffold.base.BasePresenter;
  */
 public class ToolPresenter extends BasePresenter<ToolContract.View> implements ToolContract.Presenter {
 
-    public ToolPresenter(ToolContract.View view) {
-        this.mView = view;
+    public ToolPresenter(ToolContract.View view, Context context) {
+        super.onViewActive(view, context);
     }
 
-    @Override
-    public void onViewActive(ToolContract.View view) {
-
-    }
-
-    @Override
-    public void onViewInactive() {
-
-    }
 }

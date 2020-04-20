@@ -1,5 +1,7 @@
 package com.niteroomcreation.scaffold.presentation.activities.language;
 
+import android.content.Context;
+
 import com.niteroomcreation.scaffold.base.BasePresenter;
 
 /**
@@ -8,7 +10,7 @@ import com.niteroomcreation.scaffold.base.BasePresenter;
  */
 public class LanguagePresenter extends BasePresenter<LanguageContract.View> implements LanguageContract.Presenter {
 
-    LanguagePresenter(LanguageContract.View view) {
-        super.onViewActive(view);
+    LanguagePresenter(LanguageContract.View view, Context context) {
+        super.onViewActive(view, context);
     }
 }

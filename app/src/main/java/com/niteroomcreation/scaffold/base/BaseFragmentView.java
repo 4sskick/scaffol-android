@@ -10,12 +10,21 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+import com.niteroomcreation.scaffold.utils.LocalLangHelper;
+import com.niteroomcreation.scaffold.utils.LogHelper;
+import com.niteroomcreation.scaffold.utils.PrefKeys;
+import com.pixplicity.easyprefs.library.Prefs;
+
+import java.util.Locale;
+
 import butterknife.ButterKnife;
 
 /**
  * Created by Septian Adi Wijaya on 04/09/19
  */
 public abstract class BaseFragmentView extends Fragment implements IBaseView {
+
+    private static final String TAG = BaseFragmentView.class.getSimpleName();
 
     private BaseView mActivity;
 
@@ -37,7 +46,8 @@ public abstract class BaseFragmentView extends Fragment implements IBaseView {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
 
         View view = null;
         if (contentLayout() != ((BaseView) getActivity()).EMPTY_LAYOUT)
@@ -63,7 +73,12 @@ public abstract class BaseFragmentView extends Fragment implements IBaseView {
      */
     @Override
     public void onAttach(Context context) {
-        super.onAttach(context);
+        super.onAttach(LocalLangHelper.wrap(context
+                , Prefs.getString(PrefKeys.KEY_LOCAL_LANG_SELECTED, Locale.getDefault()
+                        .getLanguage())));
+
+        LogHelper.e(TAG, Prefs.getString(PrefKeys.KEY_LOCAL_LANG_SELECTED, Locale.getDefault()
+                .getLanguage()));
 
         if (context instanceof BaseView) {
             BaseView activity = (BaseView) context;

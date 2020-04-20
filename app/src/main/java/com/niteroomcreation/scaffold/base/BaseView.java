@@ -1,6 +1,7 @@
 package com.niteroomcreation.scaffold.base;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
@@ -11,7 +12,13 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.niteroomcreation.scaffold.R;
+import com.niteroomcreation.scaffold.utils.LocalLangHelper;
+import com.niteroomcreation.scaffold.utils.LogHelper;
+import com.niteroomcreation.scaffold.utils.PrefKeys;
 import com.niteroomcreation.scaffold.view.GenericStateView;
+import com.pixplicity.easyprefs.library.Prefs;
+
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,6 +28,8 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseView extends AppCompatActivity implements IBaseView,
         BaseFragmentView.BaseFragmentCallback {
+
+    private static final String TAG = BaseView.class.getSimpleName();
 
     public static final int EMPTY_LAYOUT = 0;
 
@@ -38,6 +47,17 @@ public abstract class BaseView extends AppCompatActivity implements IBaseView,
     protected abstract int contentLayout();
 
     protected abstract void initComponents(@Nullable Bundle savedInstanceState);
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocalLangHelper.wrap(newBase
+                , Prefs.getString(PrefKeys.KEY_LOCAL_LANG_SELECTED, Locale.getDefault()
+                        .getLanguage())));
+
+
+        LogHelper.e(TAG, Prefs.getString(PrefKeys.KEY_LOCAL_LANG_SELECTED, Locale.getDefault()
+                .getLanguage()));
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

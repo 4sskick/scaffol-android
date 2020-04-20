@@ -9,6 +9,9 @@ import android.widget.RadioGroup;
 import com.niteroomcreation.scaffold.R;
 import com.niteroomcreation.scaffold.base.BaseView;
 import com.niteroomcreation.scaffold.utils.LogHelper;
+import com.niteroomcreation.scaffold.utils.PrefKeys;
+import com.niteroomcreation.scaffold.utils.Utils;
+import com.pixplicity.easyprefs.library.Prefs;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,6 +32,8 @@ public class LanguageActivity extends BaseView implements LanguageContract.View 
     @BindView(R.id.radio_language)
     RadioGroup radioLanguage;
 
+    private String langCode = null;
+
     @Override
     protected int parentLayout() {
         return 0;
@@ -37,6 +42,12 @@ public class LanguageActivity extends BaseView implements LanguageContract.View 
     @Override
     protected int contentLayout() {
         return R.layout.a_language;
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
     }
 
     @Override
@@ -50,6 +61,8 @@ public class LanguageActivity extends BaseView implements LanguageContract.View 
                 LogHelper.e(TAG, radioButton.getText().toString());
             }
         });
+
+        radioLanguageId.performClick();
 
     }
 
@@ -65,15 +78,22 @@ public class LanguageActivity extends BaseView implements LanguageContract.View 
         switch (view.getId()) {
             case R.id.radio_language_id:
                 radioLanguageId.setChecked(checked);
+                langCode = "IN";
                 break;
             case R.id.radio_language_en:
                 radioLanguageEn.setChecked(checked);
+                langCode = "EN";
                 break;
             case R.id.btn_language_save:
 //                NavigationUtils.directToAccountSetup(this);
 
+//                Utils.setLanguageLocale(this, langCode != null ? langCode : "IN");
+
+                Prefs.putString(PrefKeys.KEY_LOCAL_LANG_SELECTED, langCode);
+
                 LogHelper.e(TAG,
-                        "with checked button " + ((RadioButton) radioLanguage.findViewById(radioLanguage.getCheckedRadioButtonId())).getText().toString());
+                        "with checked button " + ((RadioButton) radioLanguage.findViewById(radioLanguage.getCheckedRadioButtonId())).getText().toString()
+                                + "\non lang code " + langCode);
 
                 break;
         }

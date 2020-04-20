@@ -1,5 +1,7 @@
 package com.niteroomcreation.scaffold.presentation.fragments.register;
 
+import android.content.Context;
+
 import com.niteroomcreation.scaffold.base.BasePresenter;
 
 /**
@@ -8,7 +10,7 @@ import com.niteroomcreation.scaffold.base.BasePresenter;
  */
 public class RegisterPresenter extends BasePresenter<RegisterContract.View> implements RegisterContract.Presenter {
 
-    RegisterPresenter(RegisterContract.View view) {
-        super.onViewActive(view);
+    RegisterPresenter(RegisterContract.View view, Context context) {
+        super.onViewActive(view, context);
     }
 }

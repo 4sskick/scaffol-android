@@ -1,5 +1,7 @@
 package com.niteroomcreation.scaffold.presentation.activities.account_setup;
 
+import android.content.Context;
+
 import com.niteroomcreation.scaffold.base.BasePresenter;
 
 /**
@@ -8,7 +10,7 @@ import com.niteroomcreation.scaffold.base.BasePresenter;
  */
 public class AccountSetupPresenter extends BasePresenter<AccountSetupContract.View> implements AccountSetupContract.Presenter {
 
-    AccountSetupPresenter(AccountSetupContract.View view) {
-        super.onViewActive(view);
+    AccountSetupPresenter(AccountSetupContract.View view, Context context) {
+        super.onViewActive(view, context);
     }
 }

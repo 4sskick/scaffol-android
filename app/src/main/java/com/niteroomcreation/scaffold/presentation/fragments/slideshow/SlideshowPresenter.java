@@ -1,5 +1,7 @@
 package com.niteroomcreation.scaffold.presentation.fragments.slideshow;
 
+import android.content.Context;
+
 import com.niteroomcreation.scaffold.base.BasePresenter;
 
 /**
@@ -7,17 +9,8 @@ import com.niteroomcreation.scaffold.base.BasePresenter;
  */
 public class SlideshowPresenter extends BasePresenter<SlideshowContract.View> implements SlideshowContract.Presenter {
 
-    public SlideshowPresenter(SlideshowContract.View view) {
-        this.mView = view;
+    public SlideshowPresenter(SlideshowContract.View view, Context context) {
+        super.onViewActive(view, context);
     }
 
-    @Override
-    public void onViewActive(SlideshowContract.View view) {
-
-    }
-
-    @Override
-    public void onViewInactive() {
-
-    }
 }

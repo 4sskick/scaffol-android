@@ -1,5 +1,7 @@
 package com.niteroomcreation.scaffold.presentation.fragments.home;
 
+import android.content.Context;
+
 import com.niteroomcreation.scaffold.base.BasePresenter;
 
 /**
@@ -7,17 +9,8 @@ import com.niteroomcreation.scaffold.base.BasePresenter;
  */
 public class HomePresenter extends BasePresenter<HomeContract.View> implements HomeContract.Presenter {
 
-    public HomePresenter(HomeContract.View view) {
-        this.mView = view;
+    public HomePresenter(HomeContract.View view, Context context) {
+        super.onViewActive(view, context);
     }
 
-    @Override
-    public void onViewActive(HomeContract.View view) {
-
-    }
-
-    @Override
-    public void onViewInactive() {
-
-    }
 }

@@ -1,5 +1,7 @@
 package com.niteroomcreation.scaffold.presentation.activities.main;
 
+import android.content.Context;
+
 import com.niteroomcreation.scaffold.base.BasePresenter;
 
 /**
@@ -7,8 +9,8 @@ import com.niteroomcreation.scaffold.base.BasePresenter;
  */
 public class MainPresenter extends BasePresenter<MainContract.View> implements MainContract.Presenter {
 
-    public MainPresenter(MainContract.View view) {
-        super.onViewActive(view);
+    public MainPresenter(MainContract.View view, Context context) {
+        super.onViewActive(view, context);
     }
 
 }

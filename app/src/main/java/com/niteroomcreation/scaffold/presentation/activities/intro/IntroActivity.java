@@ -35,7 +35,7 @@ public class IntroActivity extends BaseView implements IntroContract.View {
     private GenericPagerAdapter genericPagerAdapter;
     private ViewPager.OnPageChangeListener onPageChangeListener;
 
-    private IntroContract.Presenter presenter = new IntroPresenter(this);
+    private IntroContract.Presenter presenter = new IntroPresenter(this, this);
 
     @Override
     protected int parentLayout() {

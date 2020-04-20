@@ -1,5 +1,7 @@
 package com.niteroomcreation.scaffold.presentation.fragments.login;
 
+import android.content.Context;
+
 import com.niteroomcreation.scaffold.base.BasePresenter;
 
 /**
@@ -8,7 +10,7 @@ import com.niteroomcreation.scaffold.base.BasePresenter;
  */
 public class LoginPresenter extends BasePresenter<LoginContract.View> implements LoginContract.Presenter {
 
-    LoginPresenter(LoginContract.View view){
-        super.onViewActive(view);
+    LoginPresenter(LoginContract.View view , Context context) {
+        super.onViewActive(view, context);
     }
 }

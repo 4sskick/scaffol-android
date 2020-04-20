@@ -1,5 +1,7 @@
 package com.niteroomcreation.scaffold.presentation.activities.splash;
 
+import android.content.Context;
+
 import com.niteroomcreation.scaffold.base.BasePresenter;
 
 /**
@@ -8,8 +10,8 @@ import com.niteroomcreation.scaffold.base.BasePresenter;
  */
 public class SplashPresenter extends BasePresenter<SplashContract.View> implements SplashContract.Presenter {
 
-    public SplashPresenter(SplashContract.View view) {
-        super.onViewActive(view);
+    public SplashPresenter(SplashContract.View view, Context context) {
+        super.onViewActive(view, context);
     }
 
 }
