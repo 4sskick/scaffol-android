@@ -25,14 +25,16 @@ public class NavigationUtils {
         act.finish();
     }
 
-    public static void directToChooseLangugeScreen(Activity act) {
+    public static void directToChooseLanguageScreen(Activity act) {
         Intent i = new Intent(act, LanguageActivity.class);
         act.startActivity(i);
+        act.finish();
     }
 
     public static void directToAccountSetup(Activity act) {
         Intent i = new Intent(act, AccountSetupActivity.class);
         act.startActivity(i);
+        act.finish();
     }
 
 }

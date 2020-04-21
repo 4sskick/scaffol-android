@@ -9,6 +9,7 @@ import android.widget.RadioGroup;
 import com.niteroomcreation.scaffold.R;
 import com.niteroomcreation.scaffold.base.BaseView;
 import com.niteroomcreation.scaffold.utils.LogHelper;
+import com.niteroomcreation.scaffold.utils.NavigationUtils;
 import com.niteroomcreation.scaffold.utils.PrefKeys;
 import com.niteroomcreation.scaffold.utils.Utils;
 import com.pixplicity.easyprefs.library.Prefs;
@@ -62,7 +63,10 @@ public class LanguageActivity extends BaseView implements LanguageContract.View 
             }
         });
 
-        radioLanguageId.performClick();
+        if (Prefs.getString(PrefKeys.KEY_LOCAL_LANG_SELECTED, "in").equals("en"))
+            radioLanguageEn.performClick();
+        else
+            radioLanguageId.performClick();
 
     }
 
@@ -78,23 +82,20 @@ public class LanguageActivity extends BaseView implements LanguageContract.View 
         switch (view.getId()) {
             case R.id.radio_language_id:
                 radioLanguageId.setChecked(checked);
-                langCode = "IN";
+                langCode = "in";
                 break;
             case R.id.radio_language_en:
                 radioLanguageEn.setChecked(checked);
-                langCode = "EN";
+                langCode = "en";
                 break;
             case R.id.btn_language_save:
-//                NavigationUtils.directToAccountSetup(this);
-
-//                Utils.setLanguageLocale(this, langCode != null ? langCode : "IN");
-
                 Prefs.putString(PrefKeys.KEY_LOCAL_LANG_SELECTED, langCode);
 
                 LogHelper.e(TAG,
                         "with checked button " + ((RadioButton) radioLanguage.findViewById(radioLanguage.getCheckedRadioButtonId())).getText().toString()
                                 + "\non lang code " + langCode);
 
+                NavigationUtils.directToAccountSetup(this);
                 break;
         }
     }

@@ -12,6 +12,7 @@ import com.niteroomcreation.scaffold.base.BaseView;
 import com.niteroomcreation.scaffold.presentation.fragments.login.LoginFragment;
 import com.niteroomcreation.scaffold.presentation.fragments.register.RegisterFragment;
 import com.niteroomcreation.scaffold.utils.LogHelper;
+import com.niteroomcreation.scaffold.utils.NavigationUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -88,5 +89,10 @@ public class AccountSetupActivity extends BaseView implements AccountSetupContra
         }
 
         return f;
+    }
+
+    @Override
+    public void onBackPressed() {
+        NavigationUtils.directToChooseLanguageScreen(this);
     }
 }

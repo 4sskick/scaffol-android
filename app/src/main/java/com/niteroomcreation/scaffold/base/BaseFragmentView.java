@@ -17,6 +17,8 @@ import com.pixplicity.easyprefs.library.Prefs;
 
 import java.util.Locale;
 
+import javax.annotation.Nonnull;
+
 import butterknife.ButterKnife;
 
 /**
@@ -40,7 +42,7 @@ public abstract class BaseFragmentView extends Fragment implements IBaseView {
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
+    public void onSaveInstanceState(@Nonnull Bundle outState) {
         super.onSaveInstanceState(outState);
     }
 
