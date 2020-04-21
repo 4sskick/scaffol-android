@@ -27,6 +27,8 @@ public class GalleryFragment extends BaseFragmentView implements GalleryContract
 
     @Override
     protected void initComponents(View view) {
+        setFragmentTitle(getResources().getString(R.string.menu_gallery));
+
         tvDummy.setText(getFragmentTitle());
     }
 

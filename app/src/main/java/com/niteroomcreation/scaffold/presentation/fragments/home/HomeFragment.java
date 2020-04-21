@@ -28,6 +28,7 @@ public class HomeFragment extends BaseFragmentView implements HomeContract.View 
 
     @Override
     protected void initComponents(View view) {
+        setFragmentTitle(getResources().getString(R.string.menu_home));
         tvDummy.setText(getFragmentTitle());
     }
 }

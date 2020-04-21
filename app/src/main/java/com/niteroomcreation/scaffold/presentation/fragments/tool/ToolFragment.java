@@ -27,6 +27,7 @@ public class ToolFragment extends BaseFragmentView implements ToolContract.View 
 
     @Override
     protected void initComponents(View view) {
+        setFragmentTitle(getResources().getString(R.string.menu_tools));
         tvDummy.setText(getFragmentTitle());
     }
 }

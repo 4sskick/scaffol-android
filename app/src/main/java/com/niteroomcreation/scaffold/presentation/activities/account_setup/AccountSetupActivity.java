@@ -70,6 +70,8 @@ public class AccountSetupActivity
                 }
                 setupBannerState();
                 break;
+            default:
+                break;
         }
     }
 
@@ -103,6 +105,7 @@ public class AccountSetupActivity
     @Override
     public void onLoginAction() {
         LogHelper.e(TAG);
+        NavigationUtils.directToMainScreen(this);
     }
 
     @Override
@@ -120,7 +123,7 @@ public class AccountSetupActivity
     @Override
     public void onRegisterAction() {
         LogHelper.e(TAG);
-
+        NavigationUtils.directToMainScreen(this);
     }
 
     @Override
