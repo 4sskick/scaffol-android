@@ -21,7 +21,10 @@ import butterknife.OnClick;
  * Created by Septian Adi Wijaya on 18/04/2020.
  * please be sure to add credential if you use people's code
  */
-public class AccountSetupActivity extends BaseView implements AccountSetupContract.View {
+public class AccountSetupActivity
+        extends BaseView
+        implements AccountSetupContract.View
+        , AccountSetupListener {
 
     private static final String TAG = AccountSetupActivity.class.getSimpleName();
 
@@ -74,6 +77,7 @@ public class AccountSetupActivity extends BaseView implements AccountSetupContra
 
         Fragment f = getSupportFragmentManager().findFragmentById(flAccountSetup.getId());
 
+        //kebalik, but work!
         if (f instanceof RegisterFragment) {
             LogHelper.e(TAG, "login");
 
@@ -94,5 +98,40 @@ public class AccountSetupActivity extends BaseView implements AccountSetupContra
     @Override
     public void onBackPressed() {
         NavigationUtils.directToChooseLanguageScreen(this);
+    }
+
+    @Override
+    public void onLoginAction() {
+        LogHelper.e(TAG);
+    }
+
+    @Override
+    public void onFbLogin() {
+        LogHelper.e(TAG);
+
+    }
+
+    @Override
+    public void onGoglLogin() {
+        LogHelper.e(TAG);
+
+    }
+
+    @Override
+    public void onRegisterAction() {
+        LogHelper.e(TAG);
+
+    }
+
+    @Override
+    public void onFbRegister() {
+        LogHelper.e(TAG);
+
+    }
+
+    @Override
+    public void onGoglRegister() {
+        LogHelper.e(TAG);
+
     }
 }
