@@ -101,6 +101,7 @@ public class MainActivity extends BaseView implements MainContract.View {
             }
         });
 
+        //as default this should be shown, but need to follow condition which gonna stored on Prefs
         GenericDialog d = new GenericDialog();
         d.show(getSupportFragmentManager(), d.getClass().getSimpleName());
     }
