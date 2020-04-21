@@ -106,7 +106,7 @@
                 android:layout_marginBottom="@dimen/padding_standard">
 
                 <View
-                    style="@style/Divider"
+                    style="@style/ComponentDivider"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/padding_large"
                     android:layout_marginRight="@dimen/padding_large" />

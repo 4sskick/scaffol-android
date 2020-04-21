@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/b_dialog_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/divider_lighter">
+
+    <View
+        android:id="@+id/b_dialog_dismiss_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.design.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.8">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/b_dialog_content"
+                android:layout_width="0dp"
+                android:padding="@dimen/padding_standard"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginTop="@dimen/padding_standard" />
+
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/b_dialog_ic_close"
+                style="@style/EffectRipple"
+                android:layout_width="@dimen/icon_default"
+                android:layout_height="@dimen/icon_default"
+                android:layout_margin="@dimen/padding_small"
+                android:adjustViewBounds="true"
+                android:tint="@color/textColorSecondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_close_active" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.design.card.MaterialCardView>
+</android.support.constraint.ConstraintLayout>

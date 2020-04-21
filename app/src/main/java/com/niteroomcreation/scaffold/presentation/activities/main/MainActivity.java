@@ -16,6 +16,7 @@ import android.widget.FrameLayout;
 
 import com.niteroomcreation.scaffold.R;
 import com.niteroomcreation.scaffold.base.BaseView;
+import com.niteroomcreation.scaffold.presentation.dialogs.generic.GenericDialog;
 import com.niteroomcreation.scaffold.presentation.fragments.gallery.GalleryFragment;
 import com.niteroomcreation.scaffold.presentation.fragments.home.HomeFragment;
 import com.niteroomcreation.scaffold.presentation.fragments.slideshow.SlideshowFragment;
@@ -36,6 +37,8 @@ public class MainActivity extends BaseView implements MainContract.View {
     DrawerLayout drawerLayout;
     @BindView(R.id.fl_main_content)
     FrameLayout flMainContent;
+
+    private MainPresenter presenter = new MainPresenter(this, this);
 
     @Override
     protected int parentLayout() {
@@ -58,26 +61,31 @@ public class MainActivity extends BaseView implements MainContract.View {
                 , R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-        moveToFragment(flMainContent.getId(), HomeFragment.newInstance(), HomeFragment.class.getSimpleName());
+        moveToFragment(flMainContent.getId(), HomeFragment.newInstance(),
+                HomeFragment.class.getSimpleName());
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
                 switch (menuItem.getItemId()) {
                     case R.id.nav_home:
-                        moveToFragment(flMainContent.getId(), HomeFragment.newInstance(), HomeFragment.class.getSimpleName());
+                        moveToFragment(flMainContent.getId(), HomeFragment.newInstance(),
+                                HomeFragment.class.getSimpleName());
                         break;
 
                     case R.id.nav_gallery:
-                        moveToFragment(flMainContent.getId(), GalleryFragment.newInstance(), GalleryFragment.class.getSimpleName());
+                        moveToFragment(flMainContent.getId(), GalleryFragment.newInstance(),
+                                GalleryFragment.class.getSimpleName());
                         break;
 
                     case R.id.nav_slideshow:
-                        moveToFragment(flMainContent.getId(), SlideshowFragment.newInstance(), SlideshowFragment.class.getSimpleName());
+                        moveToFragment(flMainContent.getId(), SlideshowFragment.newInstance(),
+                                SlideshowFragment.class.getSimpleName());
                         break;
 
                     case R.id.nav_tools:
-                        moveToFragment(flMainContent.getId(), ToolFragment.newInstance(), ToolFragment.class.getSimpleName());
+                        moveToFragment(flMainContent.getId(), ToolFragment.newInstance(),
+                                ToolFragment.class.getSimpleName());
                         break;
 
                     case R.id.nav_share:
@@ -92,6 +100,9 @@ public class MainActivity extends BaseView implements MainContract.View {
                 return true;
             }
         });
+
+        GenericDialog d = new GenericDialog();
+        d.show(getSupportFragmentManager(), d.getClass().getSimpleName());
     }
 
     @OnClick({R.id.fab})
@@ -110,7 +121,8 @@ public class MainActivity extends BaseView implements MainContract.View {
             drawerLayout.closeDrawer(GravityCompat.START);
         } else {
             if (!(getBaseMainFragmentManager().findFragmentById(flMainContent.getId()) instanceof HomeFragment)) {
-                moveToFragment(flMainContent.getId(), HomeFragment.newInstance(), HomeFragment.class.getSimpleName());
+                moveToFragment(flMainContent.getId(), HomeFragment.newInstance(),
+                        HomeFragment.class.getSimpleName());
             } else {
                 super.onBackPressed();
             }

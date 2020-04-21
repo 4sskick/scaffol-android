@@ -9,7 +9,7 @@ import com.niteroomcreation.scaffold.base.BasePresenter;
  */
 public class MainPresenter extends BasePresenter<MainContract.View> implements MainContract.Presenter {
 
-    public MainPresenter(MainContract.View view, Context context) {
+    MainPresenter(MainContract.View view, Context context) {
         super.onViewActive(view, context);
     }
 
