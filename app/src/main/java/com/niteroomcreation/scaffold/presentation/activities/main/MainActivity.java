@@ -69,29 +69,27 @@ public class MainActivity extends BaseView implements MainContract.View {
 
                 switch (menuItem.getItemId()) {
                     case R.id.nav_home:
-                        moveToFragment(flMainContent.getId(), HomeFragment.newInstance(),
-                                HomeFragment.class.getSimpleName());
+                        moveToFragment(flMainContent.getId()
+                                , HomeFragment.newInstance()
+                                , HomeFragment.class.getSimpleName());
                         break;
 
-                    case R.id.nav_gallery:
-                        moveToFragment(flMainContent.getId(), GalleryFragment.newInstance(),
-                                GalleryFragment.class.getSimpleName());
+                    case R.id.nav_profile:
+                        moveToFragment(flMainContent.getId()
+                                , GalleryFragment.newInstance()
+                                , GalleryFragment.class.getSimpleName());
                         break;
 
-                    case R.id.nav_slideshow:
-                        moveToFragment(flMainContent.getId(), SlideshowFragment.newInstance(),
-                                SlideshowFragment.class.getSimpleName());
+                    case R.id.nav_history:
+                        moveToFragment(flMainContent.getId()
+                                , SlideshowFragment.newInstance()
+                                , SlideshowFragment.class.getSimpleName());
                         break;
 
-                    case R.id.nav_tools:
-                        moveToFragment(flMainContent.getId(), ToolFragment.newInstance(),
-                                ToolFragment.class.getSimpleName());
-                        break;
-
-                    case R.id.nav_share:
-                        break;
-
-                    case R.id.nav_send:
+                    case R.id.nav_bookmark:
+                        moveToFragment(flMainContent.getId()
+                                , ToolFragment.newInstance()
+                                , ToolFragment.class.getSimpleName());
                         break;
                 }
 

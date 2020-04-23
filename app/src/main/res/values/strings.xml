@@ -32,4 +32,7 @@
     <string name="str_register_phone">Phone no. +62</string>
     <string name="str_register_name">Username</string>
     <string name="str_register_passw">Password</string>
+    <string name="str_profile">Profile</string>
+    <string name="str_booking">Booking</string>
+    <string name="str_bookmark">Bookmarked</string>
 </resources>

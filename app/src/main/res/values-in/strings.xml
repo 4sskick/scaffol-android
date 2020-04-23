@@ -25,4 +25,5 @@
     <string name="str_register">Daftar</string>
     <string name="str_login">Masuk</string>
     <string name="str_welcome" translatable="false">Selamat Datang kawan!</string>
+    <string name="str_profile">Profile</string>
 </resources>
